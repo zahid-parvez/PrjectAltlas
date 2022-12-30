@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Project Atlas</title>
+    <link rel="stylesheet" href="style_login.css">
+    <script type = "text/javascript" src="./scripts/login_update.js"></script>
+    <script src="./backend/login_details.js"></script>
+    <style>
+        .icon img {
+            width: 50px;
+            margin-left: 40%;
+            margin-top:10pt;
+            /* padding-left: 19px; */
+            /* margin-right: 2423%; */
+        } 
+        .content h1 {
+            text-shadow: 0.3mm 0.3mm wheat;
+        }
+        .content h1:hover{
+            color: orange;
+        }
+        .cn{
+            background-color: rgb(15, 106, 198);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img src="logo.png" alt="">
+                <!-- <h2 class="logo" id="newId">ProjecTlas</h2> -->
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="main.html">HOME</a></li>
+                    <li><a href="failed_login.html">UPLOAD</a></li>
+                    <li><a href="find.html">FIND</a></li>
+                    <li><a href="about-us.html">ABOUT</a></li>
+                    <li><a href="contact-page.html">CONTACT</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="content">
+            <h1 id=>ProjecTlas <br><span>Project Atlas <br></span>Stop waiting for ideas,<br> <span>find them here</span></h1>
+            <p class="par">Hello Enthusiasts, find the problem statements and project ideas.
+                Find new and <br> existing projects and problem statements that your seniors and college peers have done.
+                <br>Move on, stop waiting for ideas<br> Start finding  them here.
+            </p>
+
+            <button class="cn"><a href="sign_up.html">Join Us ✊</a></button>
+
+            <div class="form">
+                <h2>Login Here</h2>
+                <input type="email" name="email" placeholder=" User Name / Email " id="email_feild" value="">
+                <input type="password" name="pswrd" placeholder=" Password " id="pswrd_feild" value="">
+                <button class="btnn" id="loginbtn" onclick="login()"><a href="loggedInpage.html" >Login</a></button>
+
+                <p class="link">Don't have an account<br>
+                    <a href="sign_up.html" >Sign up </a> here</a>
+                </p>
+                <p class="liw">Log in with</p>
+
+                <div class="icons">
+                    <a href="#">
+                        <ion-icon name="logo-google"></ion-icon>
+                    </a>
+                    <a href="#">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="#">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="#">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="#">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script>
+        function login(){
+            let input_email = email_feild.value;
+            let input_password = pswrd_feild.value;
+            console.log(input_email);
+            console.log(input_password);
+            // func2();
+            var flag = 0;
+            users.map(function(items){
+            {
+                if((items.ei === input_email || input_email === items.un)&& items.pd === input_password)
+                {
+                    flag = 1;
+                }
+            }
+            });
+            if(flag === 1)
+                alert("Login Successful");
+            else
+                alert("Login Failed, Invalid Login Details");
+
+            email_feild.value="";
+            pswrd_feild.value="";
+        }
+    </script>
+</body>
+
+</html>
